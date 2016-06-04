@@ -49,5 +49,10 @@ namespace travelMemo.Views
             CurrentMemo.memoDetails = MemoDescriptionTextBlock.Text;
             vm.SaveItem(CurrentMemo);
         }
+
+        private void backHomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
     }
 }

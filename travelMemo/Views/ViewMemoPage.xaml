@@ -15,20 +15,25 @@
                         <AdaptiveTrigger MinWindowWidth="641" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="" Value=""/>
+                        <Setter Target="headerStackPanel.MaxHeight" Value="200"/>
+                        <Setter Target="MemoNameTextBlock.FontSize" Value="36" />
+                        <Setter Target="MemoDescriptionTextBlock.FontSize" Value="24" />
+                        <Setter Target="commandBarViewMemoPage.Visibility" Value="Collapsed" />
+                        <Setter Target="backHomeButton.Visibility" Value="Visible" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel>
-            <StackPanel Background="LightGray" Height="50" VerticalAlignment="Top" >
+            <StackPanel x:Name="headerStackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
                 <TextBlock x:Name="MemoNameTextBlock" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto"/>
             </StackPanel>
             <TextBlock x:Name="MemoDescriptionTextBlock" Margin="12" Style="{ThemeResource BodyTextBlockStyle}"/>
         </StackPanel>
+        <Button x:Name="backHomeButton" Content="Home" FontSize="36" Margin="25" VerticalAlignment="Bottom" Click="backHomeButton_Click" Visibility="Collapsed" />
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar Margin="12,0,12,0">
+        <CommandBar x:Name="commandBarViewMemoPage" Margin="12,0,12,0">
             <AppBarButton x:Name="backhomeAppBarButton" Click="backhomeAppBarButton_Click" Icon="Home" />
         </CommandBar>
     </Page.BottomAppBar>

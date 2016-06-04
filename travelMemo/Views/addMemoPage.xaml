@@ -15,14 +15,15 @@
                         <AdaptiveTrigger MinWindowWidth="641" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="" Value=""/>
+                        <Setter Target="HeaderText.FontSize" Value="36"/>
+                        
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <StackPanel>
-            <StackPanel Background="LightGray" Height="50" VerticalAlignment="Top" >
-                <TextBlock Text="Create New Memo" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
+            <StackPanel Background="LightGray" MinHeight="50" MaxHeight="200" VerticalAlignment="Top" >
+                <TextBlock x:Name="headerText" Text="Create New Memo" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
             </StackPanel>
             <TextBox x:Name="memoNameTextBox" Header="Memo Name:" Margin="10"></TextBox>
             <TextBox x:Name="memoDetailsTextBox" Header="Tell me the Details:" Margin="10" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="250"></TextBox>
