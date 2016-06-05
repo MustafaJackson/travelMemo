@@ -9,28 +9,42 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,0,12,0">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
+            <VisualStateGroup x:Name="addMemoPageVisualStateGroup">
+                <VisualState x:Name="addMemoPageVisualState">
                     <VisualState.Setters>
-                        <Setter Target="HeaderText.FontSize" Value="36"/>
-                        
+                        <Setter Target="stackPanel.(FrameworkElement.MaxHeight)" Value="200"/>
+                        <Setter Target="headerText.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="memoNameTextBox.(Control.FontSize)" Value="21.333"/>
+                        <Setter Target="memoDetailsTextBox.(Control.FontSize)" Value="18.667"/>
+                        <Setter Target="creatNewButton.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="HomeButton.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="commandBar.(UIElement.Visibility)" Value="Collapsed"/>
                     </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+
         <StackPanel>
-            <StackPanel Background="LightGray" MinHeight="50" MaxHeight="200" VerticalAlignment="Top" >
+            <StackPanel x:Name="stackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
                 <TextBlock x:Name="headerText" Text="Create New Memo" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
             </StackPanel>
             <TextBox x:Name="memoNameTextBox" Header="Memo Name:" Margin="10"></TextBox>
             <TextBox x:Name="memoDetailsTextBox" Header="Tell me the Details:" Margin="10" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Height="250"></TextBox>
         </StackPanel>
+        <Grid x:Name="grid" Margin="20" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="creatNewButton" Content="Create" FontSize="24" Click="saveMemoBtnAppBar_Click" Visibility="Collapsed" Margin="12"/>
+            <Button x:Name="HomeButton" Grid.Column="1" Content="Cancel" FontSize="24" Click="discardMemoBtnAppBar_Click" Visibility="Collapsed" Margin="12" />
+        </Grid>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar>
+        <CommandBar x:Name="commandBar">
             <AppBarButton x:Name="discardMemoBtnAppBar" Click="discardMemoBtnAppBar_Click" Icon="Delete"></AppBarButton>
             <AppBarSeparator></AppBarSeparator>
             <AppBarButton x:Name="saveMemoBtnAppBar" Click="saveMemoBtnAppBar_Click" Icon="Save"></AppBarButton>

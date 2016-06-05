@@ -45,5 +45,6 @@ namespace travelMemo
         {
             Frame.Navigate(typeof(memosPage));
         }
+
     }
 }

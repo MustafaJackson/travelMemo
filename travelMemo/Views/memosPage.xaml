@@ -9,21 +9,29 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,0,12,0">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
+            <VisualStateGroup x:Name="memosPageStateGroup">
+                <VisualState x:Name="memosPageVisualState">
                     <VisualState.Setters>
-                        <Setter Target="memosPageHeaderStackPanel.MaxHeight" Value="200"/>
-                        <Setter Target="HeaderTextBlock.FontSize" Value="36" />
-                        <Setter Target="CreateNewButton.Visibility" Value="Visible" />
-                        <Setter Target="HomeButton.Visibility" Value="Visible" />
-                        <Setter Target="commandBar.Visibility" Value="Collapsed" />
+                        <Setter Target="memosPageHeaderStackPanel.(FrameworkElement.MaxHeight)" Value="200"/>
+                        <Setter Target="HeaderTextBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="commandBar.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CreatNewButton.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="HomeButton.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="grid.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="grid.(FrameworkElement.VerticalAlignment)" Value="Bottom"/>
+                        <Setter Target="MemosListView.(Control.FontWeight)">
+                            <Setter.Value>
+                                <FontWeight>Bold</FontWeight>
+                            </Setter.Value>
+                        </Setter>
                     </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+
         <StackPanel>
             <StackPanel x:Name="memosPageHeaderStackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
                 <TextBlock x:Name="HeaderTextBlock" Text="Memos" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
@@ -39,15 +47,16 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollViewer>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-                <Button x:Name="CreatNewButton" Content="New Memo" FontSize="24" Click="CreatNewButton_Click" Visibility="Collapsed"/>
-                <Button x:Name="HomeButton" Grid.Column="1" Content="Home" FontSize="24" Click="HomeButton_Click" Visibility="Collapsed" />
-            </Grid>
+            
         </StackPanel>
+        <Grid x:Name="grid" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CreatNewButton" Content="New Memo" FontSize="24" Click="CreatNewButton_Click" Visibility="Collapsed" Margin="12"/>
+            <Button x:Name="HomeButton" Grid.Column="1" Content="Home" FontSize="24" Click="HomeButton_Click" Visibility="Collapsed" Margin="12" />
+        </Grid>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar x:Name="commandBar" Visibility="Visible" Margin="12,0,12,0">

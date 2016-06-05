@@ -9,28 +9,30 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,0,12,0">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
+            <VisualStateGroup x:Name="ViewMemoVisualStateGroup">
+                <VisualState x:Name="ViewMemoPageVisualState">
                     <VisualState.Setters>
-                        <Setter Target="headerStackPanel.MaxHeight" Value="200"/>
-                        <Setter Target="MemoNameTextBlock.FontSize" Value="36" />
-                        <Setter Target="MemoDescriptionTextBlock.FontSize" Value="24" />
-                        <Setter Target="commandBarViewMemoPage.Visibility" Value="Collapsed" />
-                        <Setter Target="backHomeButton.Visibility" Value="Visible" />
+                        
+                        <Setter Target="backHomeButton.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="headerStackPanel.(FrameworkElement.MaxHeight)" Value="200"/>
+                        <Setter Target="MemoNameTextBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="commandBarViewMemoPage.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="MemoDescriptionTextBlock.(TextBlock.FontSize)" Value="32"/>
                     </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+
         <StackPanel>
             <StackPanel x:Name="headerStackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
                 <TextBlock x:Name="MemoNameTextBlock" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto"/>
             </StackPanel>
             <TextBlock x:Name="MemoDescriptionTextBlock" Margin="12" Style="{ThemeResource BodyTextBlockStyle}"/>
         </StackPanel>
-        <Button x:Name="backHomeButton" Content="Home" FontSize="36" Margin="25" VerticalAlignment="Bottom" Click="backHomeButton_Click" Visibility="Collapsed" />
+        <Button x:Name="backHomeButton" Content="Home" FontSize="36" Margin="25" VerticalAlignment="Bottom" Click="backHomeButton_Click" Visibility="Collapsed" HorizontalAlignment="Center" />
     </Grid>
     <Page.BottomAppBar>
         <CommandBar x:Name="commandBarViewMemoPage" Margin="12,0,12,0">

@@ -43,12 +43,7 @@ namespace travelMemo.Views
             Frame.Navigate(typeof(MainPage));
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            CurrentMemo.memoName = MemoNameTextBlock.Text;
-            CurrentMemo.memoDetails = MemoDescriptionTextBlock.Text;
-            vm.SaveItem(CurrentMemo);
-        }
+        
 
         private void backHomeButton_Click(object sender, RoutedEventArgs e)
         {

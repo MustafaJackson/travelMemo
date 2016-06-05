@@ -9,24 +9,33 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12,0,12,0">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="641" />
-                    </VisualState.StateTriggers>
+            <VisualStateGroup x:Name="AboutVisualStateGroup">
+                <VisualState x:Name="AboutVisualState">
                     <VisualState.Setters>
-                        <Setter Target="" Value=""/>
+                        <Setter Target="stackPanel.(FrameworkElement.MaxHeight)" Value="200"/>
+                        <Setter Target="textBlock.(TextBlock.FontSize)" Value="48"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="29.333"/>
+                        <Setter Target="textBlock2.(TextBlock.FontSize)" Value="18.667"/>
                     </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="641"/>
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <StackPanel>
-            <StackPanel Background="LightGray" Height="50" VerticalAlignment="Top" >
-                <TextBlock Text="About" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto"/>
+
+        <StackPanel Margin="0,0,0,10">
+            <StackPanel x:Name="stackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
+                <TextBlock x:Name="textBlock" Text="About" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto"/>
             </StackPanel>
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock />
+            <StackPanel VerticalAlignment="Center" Margin="12,20,12,12" Height="314" RenderTransformOrigin="0.5,1.097">
+                <TextBlock x:Name="textBlock1" Text="Travel Memo is an application to help you taking notes while traveling allowing you to keep the best thoughts and memories everywhere." TextWrapping="WrapWholeWords" />
+                <TextBlock HorizontalAlignment="Center" Text="Version 1.0" FontSize="12" Margin="12" />
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" Text="Contact : Mustafa.Alaaelden@outlook.com" />
             </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center">
+
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
