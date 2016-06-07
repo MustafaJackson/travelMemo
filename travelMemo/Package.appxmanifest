@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="620659cd-e8cb-4800-9d8d-0fb3ff41dcf9" Publisher="CN=Mustafa" Version="1.0.0.0" />
+  <Identity Name="29388AlaaElden.TravelMemo" Publisher="CN=E58C6F8A-7EE6-4D09-A9B5-7CBEF6F1B640" Version="1.1.6.0" />
   <mp:PhoneIdentity PhoneProductId="620659cd-e8cb-4800-9d8d-0fb3ff41dcf9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Travel Memo</DisplayName>
-    <PublisherDisplayName>Mustafa AlaaElden</PublisherDisplayName>
+    <PublisherDisplayName>AlaaElden</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

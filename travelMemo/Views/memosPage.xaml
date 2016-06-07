@@ -31,12 +31,12 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <ScrollViewer HorizontalScrollMode="Auto" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
+            <StackPanel>
+                <StackPanel x:Name="memosPageHeaderStackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
+                   <TextBlock x:Name="HeaderTextBlock" Text="Memos" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
+                </StackPanel>
 
-        <StackPanel>
-            <StackPanel x:Name="memosPageHeaderStackPanel" Background="LightGray" MaxHeight="50" VerticalAlignment="Top" >
-                <TextBlock x:Name="HeaderTextBlock" Text="Memos" HorizontalAlignment="Center" Margin="12" Style="{ThemeResource TitleTextBlockStyle}" Height="auto" />
-            </StackPanel>
-            <ScrollViewer HorizontalScrollMode="Auto" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
                 <ListView x:Name="MemosListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -46,9 +46,8 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </ScrollViewer>
-            
-        </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
         <Grid x:Name="grid" Margin="20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
